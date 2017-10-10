@@ -3,76 +3,57 @@ module.exports = function(models) {
     const index = function(req, res, done) {
         var outputGreeting = "";
         var language = req.body.language;
-        var counterMsg = "";
-
-
 
         var nameData = {
             name: req.body.name
-        }
+        };
         if (!nameData || !nameData.name) {
             req.flash('error', 'Name should not be blank');
-            res.render('index')
+            res.render('index');
         } else {
             if (!language) {
                 req.flash("error", "Please select language");
                 res.render('index');
             } else {
+                var myName = req.body.name.toLowerCase();
+
+                function capitalizeFirstLetter(string) {
+                    return string.charAt(0).toUpperCase() + string.slice(1);
+                }
+                var name = capitalizeFirstLetter(myName);
+
                 models.Name.findOne({
-                    name: req.body.name
+                    name: name
                 }, function(err, theName) {
 
                     if (err) {
-                        return done(err)
+                        return done(err);
                     }
-
-                    var otherName = req.body.name;
-                    var myName = otherName.toLowerCase();
-
-                    function capitalizeFirstLetter(string) {
-                        return string.charAt(0).toUpperCase() + string.slice(1);
-                    }
-                    var name = capitalizeFirstLetter(myName)
-                    console.log(name);
 
                     if (theName) {
                         theName.greetCounter = theName.greetCounter + 1;
 
-                        if (language == 'english') {
-                            outputGreeting = "Hello, " + theName.name;
-                        } else if (language == 'setswana') {
-                            outputGreeting = "Dumela, " + theName.name;
-                        } else if (language == 'zulu') {
-                            outputGreeting = "Sawubona, " + theName.name;
-                        }
-
-                        theName
-                            .save(function(err, result) {
-                                if (err) {
-                                    return done(err)
-                                }
-                            });
+                        theName.save(function(err, result) {
+                            if (err) {
+                                return done(err);
+                            }
+                        });
 
                         models.Name.find({},  function(err,  result) { 
                             if (err) {
-                                done(err)
+                                done(err);
                             } 
-                            var counterNmbr = result.length;
 
-                            counterMsg = "Names greeted for this session: " + result.length;
                             var data = {
-                                greeting: outputGreeting,
-                                counts: counterMsg
+                                greeting: language + name,
+                                counts: "Names greeted for this session: " + result.length
                             };
 
                             res.render('index', data);
                         });
-                    };
+                    }
 
                     if (!theName) {
-
-
-
                         models.Name.create({
                             name: name,
                             greetCounter: 1
@@ -80,38 +61,20 @@ module.exports = function(models) {
                             if (err) {
                                 return done(err);
                             }
-                            models.Name.find({
-                                name: name
-                            }, function(err, results) {
-                                if (err) {
-                                    return done(err);
-                                }
+                            models.Name.find({},  function(err,  result) {
+                                if (err) {return done(err);}
 
-                                if (language == 'english') {
-                                    outputGreeting = "Hello, " + result.name;
-                                } else if (language == 'setswana') {
-                                    outputGreeting = "Dumela, " + result.name;
-                                } else if (language == 'zulu') {
-                                    outputGreeting = "Sawubona, " + result.name;
-                                }
-                                models.Name.find({},  function(err,  result) {
-                                    if (err) {
-                                        done(err)
-                                    };
-
-                                    counterMsg = "Names greeted for this session: " + result.length;
-                                    var data = {
-                                        greeting: outputGreeting,
-                                        counts: counterMsg
-                                    };
-                                    res.render('index', data);
-                                });
+                                var data = {
+                                    greeting: language + name,
+                                    counts: "Names greeted for this session: " + result.length
+                                };
+                                res.render('index', data);
                             });
                         });
-                    };
+                    }
                 });
-            };
-        };
+            }
+        }
     };
 
     const greeted = function(req, res, done) {
@@ -121,8 +84,6 @@ module.exports = function(models) {
             if (err) {
                 return done(err);
             }
-
-            console.log('Greeted', result);
 
             var data_2 = {
                 namesGreeted: result
