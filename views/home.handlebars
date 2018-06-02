@@ -16,9 +16,7 @@
                     {{#if messages.error}}
                         <div class="sub red header">{{messages.error}}</div>
                     {{/if}}
-                    {{#if messages.success}}
-                        <div class="sub teal header">{{messages.success}}</div>
-                    {{/if}}
+                    
                 </div>
             </h2>
                 {{!-- <div class="header" id="warningHeader">Please enter the name to be greeted.</div> --}}
@@ -49,7 +47,10 @@
 
             <div class="ui message">
                 <div class="header" id="display"></div>
-                <p id="result">Your greeting message will be displayed here.</p>
+                {{#if messages.success}}
+                        <div class="sub teal header">{{messages.default}}</div>
+                    {{/if}}
+                {{!-- <p id="result">Your greeting message will be displayed here.</p> --}}
                 <p>{{obj.greetMessage}} {{user.name}}</p>
             </div>
         </div>
