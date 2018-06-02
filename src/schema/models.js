@@ -1,0 +1,20 @@
+const mongoose = require('mongoose');
+module.exports = function(mongoUrl){
+    mongoose.Promise = global.Promise;
+    mongoose.connect(mongoUrl);
+
+    const Name = mongoose.model('Name', {
+        name : String,
+        greetCounter : Number,
+        languages: Array,
+        timestamp: {
+            firstGreeted: String,
+            lastGreeted: String
+        }
+    });
+
+    return {
+        Name
+    };
+
+};

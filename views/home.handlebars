@@ -1,0 +1,65 @@
+    <title>Home | Greetings</title>
+    
+</head>
+
+<body>
+
+    <div class="ui middle aligned center aligned container">
+        <hr>
+        <div class="ui piled segment">
+            <div class="ui message">
+            <h2 class="ui header">
+                {{!-- <i class="setting icon"></i> --}}
+                <i class="handshake outline icon"></i>
+                <div class="content">
+                    Greetings Web App
+                    {{#if messages.error}}
+                        <div class="sub red header">{{messages.error}}</div>
+                    {{/if}}
+                    {{#if messages.success}}
+                        <div class="sub teal header">{{messages.success}}</div>
+                    {{/if}}
+                </div>
+            </h2>
+                {{!-- <div class="header" id="warningHeader">Please enter the name to be greeted.</div> --}}
+            </div>
+
+            <form action="/" method="POST">
+                <div class="required field">
+                    <div class="ui large left icon input">
+                        <i class="user icon"></i>
+                        <input type="text" name="name" placeholder="Name" id="user_input" value="" required>
+                    </div>
+                </div>
+                <hr>
+                <hr>
+                <hr>
+                    <select class="ui dropdown" id="dropdown"name="language">
+                        {{#each languages}}
+                        <option value="{{language}}" name="language">{{language}}</option>
+                        {{/each}}
+                    </select>
+                <hr>
+                <button class="primary ui large button" type="submit">Greet</button>
+                {{!-- <button class="negative ui large button" type="submit">Clear</button> --}}
+            </form>
+            
+            <br>
+            <hr>
+
+            <div class="ui message">
+                <div class="header" id="display"></div>
+                <p id="result">Your greeting message will be displayed here.</p>
+                <p>{{obj.greetMessage}} {{user.name}}</p>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        $("#user_input").keyup(function(e) {
+            var regex = /^[a-zA-Z]+$/;
+            (regex.test(this.value) !== true) ? this.value = this.value.replace(/[^a-zA-Z]+/, '') : this.value
+        });
+    </script>
+</body>
