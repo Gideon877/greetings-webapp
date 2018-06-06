@@ -1,32 +1,27 @@
     <title>Home | Greetings</title>
-    
 </head>
 
 <body>
-
     <div class="ui middle aligned center aligned container">
         <hr>
         <div class="ui piled segment">
             <div class="ui message">
             <h2 class="ui header">
-                {{!-- <i class="setting icon"></i> --}}
                 <i class="handshake outline icon"></i>
                 <div class="content">
                     Greetings Web App
                     {{#if messages.error}}
                         <div class="sub red header">{{messages.error}}</div>
                     {{/if}}
-                    
                 </div>
             </h2>
-                {{!-- <div class="header" id="warningHeader">Please enter the name to be greeted.</div> --}}
             </div>
 
             <form action="/" method="POST">
                 <div class="required field">
                     <div class="ui large left icon input">
                         <i class="user icon"></i>
-                        <input type="text" name="name" placeholder="Name" id="user_input" value="" required>
+                        <input type="text" name="name" placeholder="Name" id="user_input" value="Athini" required>
                     </div>
                 </div>
                 <hr>
@@ -46,12 +41,20 @@
             <hr>
 
             <div class="ui message">
-                <div class="header" id="display"></div>
-                {{#if messages.success}}
+                <div class="header">
+                {{#if messages.default}}
                         <div class="sub teal header">{{messages.default}}</div>
-                    {{/if}}
-                {{!-- <p id="result">Your greeting message will be displayed here.</p> --}}
-                <p>{{obj.greetMessage}} {{user.name}}</p>
+                {{/if}}
+
+                {{#if user}}
+                <p>{{obj.greetMessage}} {{user.name}}.</p>
+                </div>
+                <p>You have been greeted: <b style="color:blue">{{user.greetCounter}}</b> time(s), </p>
+                <p>with <b style="color:rgb(34, 186, 206)">{{user.languages.length}}</b> different language(s).</p>
+                <hr>
+                <p>First greeted on: <b>{{user.timestamp.firstGreeted}}</b>.</p>
+                <p>Last greeted on: <b>{{user.timestamp.lastGreeted}}</b>.</p>
+                {{/if}}
             </div>
         </div>
     </div>

@@ -8,14 +8,9 @@ module.exports = function(models) {
     const getHomeScreen = (req, res, done) => {
 
         req.flash('default', 'Your greeting message will be displayed here.');
-        let obj = {
-            name
-        }
-        res.render('home', {languages, obj});
+        req.flash('error', 'Please enter the name to be greeted.');
+        res.render('home', {languages});
     }
-
-
-
 
     return {
         getHomeScreen
