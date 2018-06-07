@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 module.exports = function(mongoUrl){
     mongoose.Promise = global.Promise;
-    mongoose.connect(mongoUrl);
+    mongoose.connect(mongoUrl, {useMongoClient: true});
 
     const Name = mongoose.model('Name', {
         name : String,

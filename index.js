@@ -36,7 +36,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // parse application/json
 app.use(bodyParser.json());
 
-app.use(session({ secret: 'keyboard cat', cookie: { maxAge: 60000 * 30}}));
+app.use(session({ secret: 'keyboard cat', resave: true, saveUninitialized: true, cookie: { maxAge: 60000 * 30}}));
 app.use(flash()); // set up http session
 
 
