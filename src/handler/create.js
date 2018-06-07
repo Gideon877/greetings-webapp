@@ -12,7 +12,6 @@ module.exports = function(models) {
             req.flash('error', 'Please enter your name!')
             res.render('home', {languages});
         }
-
         let getParams = { name, language },
             event = { req, res, done };
 
