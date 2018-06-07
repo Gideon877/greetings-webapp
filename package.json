@@ -30,6 +30,6 @@
   },
   "homepage": "https://github.com/Gideon877/greetings-webapp#readme",
   "engine": {
-    "node": "^v9.5.0"
+    "node": "v9.5.0"
   }
 }
