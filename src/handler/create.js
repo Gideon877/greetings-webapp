@@ -3,7 +3,6 @@
 const languages = require('../lib/translation');
 const _ = require('lodash');
 
-
 module.exports = function(models) {
     const mongoDB = models.Name;
     
@@ -52,7 +51,6 @@ module.exports = function(models) {
             res.render('home', { languages, obj, user });
         });       
     };
-
 
     function updateUser(user, getParams, event){
         let { req, res, done } = event;

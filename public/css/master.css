@@ -6,3 +6,35 @@ hr {
   #display {
     text-transform: capitalize
   }
+
+  p {
+    color: black;
+    font-family: 'Nanum Gothic', sans-serif;
+  }
+
+  #dropdown {
+    color:rgb(44, 154, 182);
+    font-family: 'Playfair Display', serif;
+  } 
+  
+  b {
+    color:rgb(21, 67, 128);
+    font-family: 'Playfair Display', serif;
+  }
+
+div {
+    font-family: 'Lora', serif;
+  }
+
+/* FONTS AVAILABLE
+font-family: 'Open Sans Condensed', sans-serif;
+font-family: 'Playfair Display', serif;
+font-family: 'Lora', serif;
+font-family: 'PT Serif', serif;
+font-family: 'Poor Story', cursive;
+font-family: 'Nanum Gothic', sans-serif;
+font-family: 'Abel', sans-serif;
+font-family: 'Goudy Bookletter 1911', serif;
+font-family: 'Peddana', serif;
+font-family: 'EB Garamond', serif; 
+*/
