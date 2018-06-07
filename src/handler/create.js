@@ -74,13 +74,11 @@ module.exports = function(models) {
             })
         }
         else {
-            let newLanguage = {
+            user.languages = user.languages.concat({
                 type: language,
                 counter: 1
-            }
-            // user.languages.push(newLanguage);
+            });
         };
-
         user.greetCounter = user.greetCounter + 1;
         user.timestamp.lastGreeted = new Date();
 
@@ -91,9 +89,7 @@ module.exports = function(models) {
         let obj = _.find(languages, function(x) {
             return x.language == language
         });
-
         res.render('home', { languages, obj, user});     
-
     };
 
     return {

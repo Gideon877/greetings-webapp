@@ -1,68 +1,120 @@
 module.exports = [
 	{
 		language: 'Afrikaans',
-		greetMessage: 'Halo, ',
-		greetedMessage: 'Welkom terug.'
+		greetMessage: 'Hallo, ',
+		greetedMessage: 'Welkom terug.',
+		greetCounter: '',
+		languageCount: '',
+		firstGreeted: 'Eers begroet',
+		lastGreeted: 'Laaste begroet',
 	}, 
 	{
 		language: 'English',
 		greetMessage: 'Hello, ',
-		greetedMessage: 'Welcome back.'
+		greetedMessage: 'Welcome back.',
+		greetCounter: '',
+		languageCount: '',
+		firstGreeted: 'First greeted on',
+		lastGreeted: 'Last greeted on',
 	},
 	{
 		language: 'French',
 		greetMessage: 'Bonjour, ',
-		greetedMessage: 'Nous saluons le retour.'
+		greetedMessage: 'Nous saluons le retour.',
+		greetCounter: '',
+		languageCount: '',
+		firstGreeted: '',
+		lastGreeted: '',
 	}, 
 	{
 		language: 'IsiXhosa',
 		greetMessage: 'Molo, ',
-		greetedMessage: 'Wamkelekile kwakhona.'
+		greetedMessage: 'Wamkelekile kwakhona.',
+		greetCounter: '',
+		languageCount: '',
+		firstGreeted: '',
+		lastGreeted: '',
 	},
 	{
 		language: 'isiNdebele',
 		greetMessage: 'Lotjhani, ',
-		greetedMessage: ''
+		greetedMessage: '',
+		greetCounter: '',
+		languageCount: '',
+		firstGreeted: '',
+		lastGreeted: '',
 	},
 	{
 		language: 'IsiZulu',
 		greetMessage: 'Sawubona, ',
-		greetedMessage: 'Siyakwamukela.'
+		greetedMessage: 'Siyakwamukela.',
+		greetCounter: '',
+		languageCount: '',
+		firstGreeted: '',
+		lastGreeted: '',
 	},
 	{
 		language: 'Northern Sotho',
 		greetMessage: 'Thobela, ',
-		greetedMessage: 'O amogetšwe.'
+		greetedMessage: 'O amogetšwe.',
+		greetCounter: '',
+		languageCount: '',
+		firstGreeted: '',
+		lastGreeted: '',
 	},
 	{
 		language: 'Setswana',
 		greetMessage: 'Dumela, ',
-		greetedMessage: '	O amogetswe.'
+		greetedMessage: ' O amogetswe.',
+		greetCounter: '',
+		languageCount: '',
+		firstGreeted: '',
+		lastGreeted: '',
 	},
 	{
 		language: 'Siswati (Swati)',
 		greetMessage: 'Sawubona, ',
-		greetedMessage: ''
+		greetedMessage: '',
+		greetCounter: '',
+		languageCount: '',
+		firstGreeted: '',
+		lastGreeted: '',
 	},
 	{
 		language: 'Southern Sotho',
 		greetMessage: 'Dumela, ',
-		greetedMessage: 'O amohetswe.'
+		greetedMessage: 'O amohetswe.',
+		greetCounter: '',
+		languageCount: '',
+		firstGreeted: '',
+		lastGreeted: '',
 	},
 	{
 		language: 'Spanish',
 		greetMessage: 'Hola, ',
-		greetedMessage: 'dar una buena acogida.'
+		greetedMessage: 'dar una buena acogida.',
+		greetCounter: '',
+		languageCount: '',
+		firstGreeted: '',
+		lastGreeted: '',
 	}, 
 	{
 		language: 'Tshivenḓa (Venda)',
 		greetMessage: '♀ Aa / ♂ Ndaa, ',
-		greetedMessage: ''
+		greetedMessage: '',
+		greetCounter: '',
+		languageCount: '',
+		firstGreeted: '',
+		lastGreeted: '',
 	},
 	{
 		language: 'Xitsonga (Tsonga)',
 		greetMessage: 'Avuxeni, ',
-		greetedMessage: ''
+		greetedMessage: '',
+		greetCounter: '',
+		languageCount: '',
+		firstGreeted: '',
+		lastGreeted: '',
 	},
 ];
 
