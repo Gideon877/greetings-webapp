@@ -61,19 +61,11 @@ module.exports = function(models) {
         });
         
         if (getLanguageIndex >= 0) {
-            mongoDB
-            .update({
-                name,
-                'languages.type': language
-                }, 
-                {
-                    $inc: {'languages.$.counter': 1}
-                },
+            mongoDB.update({ name, 'languages.type': language }, { $inc: {'languages.$.counter': 1} },
                 function(err){
                     if (err) return done(err)
             })
-        }
-        else {
+        } else {
             user.languages = user.languages.concat({
                 type: language,
                 counter: 1
