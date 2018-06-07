@@ -1,6 +1,6 @@
 {
   "name": "greetings-webapp",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "description": "Allows a user to greet different people using a HTTP GET route.",
   "main": "index.js",
   "scripts": {
@@ -29,7 +29,7 @@
     "url": "https://github.com/Gideon877/greetings-webapp/issues"
   },
   "homepage": "https://github.com/Gideon877/greetings-webapp#readme",
-  "engine": {
+  "engines": {
     "node": "v9.5.0"
   }
 }
