@@ -28,6 +28,10 @@
   "bugs": {
     "url": "https://github.com/Gideon877/greetings-webapp/issues"
   },
+  "files": [
+    "cli.js",
+    "lib"
+  ],
   "homepage": "https://github.com/Gideon877/greetings-webapp#readme",
   "engines": {
     "node": "4.7.0"
