@@ -7,7 +7,7 @@ module.exports = function(models) {
     const mongoDB = models.Name;
     
     const greetSomeone = (req, res, done) => {
-        let name = req.body.name, language = req.body.language
+        let { name, language } = req.body;
         if (!name) {
             req.flash('error', 'Please enter your name!')
             res.render('home', {languages});
@@ -23,9 +23,8 @@ module.exports = function(models) {
     }
 
     function createUser(getParams, event){
-        let  name = getParams.name, language = getParams.language;
-        let req = event.req, res = event.res, done = event.done;
-
+        let { name, language } = getParams;
+        let { req, res, done } = event; 
         mongoDB.create({
             name,
             greetCounter: 1,
@@ -52,8 +51,8 @@ module.exports = function(models) {
     };
 
     function updateUser(user, getParams, event){
-        let  name = getParams.name, language = getParams.language;
-        let res = event.res, done = event.done;
+        let { name, language } = getParams;
+        let { res, done } = event;
         let arr = user.languages;
         let getLanguageIndex = _.findIndex(arr, function(index) {
             return index.type == language;
