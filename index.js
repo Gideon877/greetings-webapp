@@ -3,21 +3,19 @@ const exphbs = require('express-handlebars');
 const bodyParser = require('body-parser');
 const flash = require('express-flash');
 const session = require('express-session');
-
+const _ = require('lodash');
 
 const Models = require('./src/schema/models');
 const models = Models(process.env.MONGO_DB_URL || 'mongodb://localhost/greetings');
 
-const NameRoutes = require('./greet');
-const nameRoutes = NameRoutes(models);
-
 const Create = require('./src/handler/create');
+const Details = require('./src/handler/details');
 const Read = require('./src/handler/read');
-const Update = require('./src/handler/update');
-const _ = require('lodash');
+// const Update = require('./src/handler/update');
 // const Delete = require('./src/handler/delete');
 
 const createRoute = Create(models);
+const detailsRoutes = Details(models);
 const readRoute = Read(models);
 // const updateRoute = Update(models);
 // const deleteRoute = Delete(models);
@@ -42,8 +40,8 @@ app.use(flash()); // set up http session
 
 
 app.get('/', readRoute.getHomeScreen);
+app.get('/details/:id', readRoute.getUser);
 // app.get('/greeted', nameRoutes.greeted);
-// app.get('/counter/:user_id', nameRoutes.counter);
 // app.get('/clear', nameRoutes.clearHistory);
 
 app.post('/', createRoute.greetSomeone);

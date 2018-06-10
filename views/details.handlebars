@@ -1,0 +1,93 @@
+    <title>Name Details</title>
+</head>
+
+<body>
+     <div class="ui middle aligned center aligned container">
+         <hr>
+
+         <div class="ui piled segment">
+             <div class="ui message">
+                 <h2 class="ui header">
+                <i class="user outline icon"></i>
+                <div class="content">
+                    {{user.name}}
+                    {{#if messages.error}}
+                        <div class="sub red header">{{messages.error}}</div>
+                    {{/if}}
+                </div>
+            </h2>
+            </div>
+            <div class="ui breadcrumb">
+                <a class="section" href="/">Home</a>
+                <div class="divider"> / </div>
+                <div class="active section">User</div>
+            </div>
+            <hr>
+
+            <div class="ui items">
+                <div class="item" align="left">
+                    <div class="image">
+                        <img src="/images/user.png">
+                    </div>
+                    <div class="content">
+                        <a class="header">Name: {{user.name}}</a>
+                        <p>Greet Counter: {{user.greetCounter}}</p>
+                        <div class="meta">
+                            <div class="ui relaxed divided list">
+                                <div class="item">
+                                    <i class="large clock outline middle aligned icon"></i>
+                                    <div class="content">
+                                    <a class="header">First Seen/Greeted</a>
+                                    <div class="description"><b>Updated:</b> {{user.timestamp.firstGreeted}}</div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <i class="large clock middle aligned icon"></i>
+                                    <div class="content">
+                                    <a class="header">Last Seen/Greeted</a>
+                                    <div class="description"><b>Updated:</b> {{user.timestamp.lastGreeted}}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="description">
+                            <p></p>
+                        </div>
+                        <div class="extra">
+                            <u><b>Additional Details</b></u>
+                            <br>
+                            <hr>
+                            <table class="ui very basic collapsing celled table">
+                            <thead>
+                                <tr><th>Languages</th>
+                                <th>Greet Counter</th>
+                            </tr></thead>
+                            <tbody>
+                                {{#each user.languages}}
+                                <tr>
+                                <td>
+                                    <h4 class="ui image header">
+                                        <i class="large {{this.flag}} outline middle aligned flag"></i>
+                                    <div class="content">
+                                            <a href="#" class="list-group-item">{{this.type}}</a>
+                                        <div class="sub header">{{this.last}}
+                                    </div>
+                                    </div>
+                                </h4></td>
+                                <td>
+                                    {{this.counter}}
+                                </td>
+                                </tr>
+                                {{/each}}
+                            </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+        
+            </div>
+
+
+         </div>
+     </div>
+</body>

@@ -1,6 +1,11 @@
     <title>Home | Greetings</title>
 </head>
-
+<style>
+    .mylist {
+        vertical-align: middle;
+        display: inline-block;
+    }
+</style>
 <body>
     <div class="ui middle aligned center aligned container">
         <hr>
@@ -34,7 +39,6 @@
                     </select>
                 <hr>
                 <button class="primary ui large button" type="submit">Greet</button>
-                {{!-- <button class="negative ui large button" type="submit">Clear</button> --}}
             </form>
             
             <br>
@@ -56,6 +60,47 @@
                 <p>Last greeted on: <b>{{user.timestamp.lastGreeted}}</b>.</p>
                 {{/if}}
             </div>
+            <div class="ui accordion">
+                <div class="title">
+                    <i class="dropdown icon"></i>
+                    Names greeted so far: <b>{{counter}}</b>
+                </div>
+                <div class="content">
+                    <div class="mylist" align="left">
+                        {{#each namesGreeted}}
+                            <div>
+                                <i class="user icon"></i>
+                                <a href="/details/{{this.id}}" class="list-group-item">{{this.name}}</a>
+                            </div>
+                            {{else}}
+                                <div class="well">
+                                    <p class="text-danger">Sorry, no names have been greeted. </p>
+                                </div>
+                        {{/each}}
+                    </div>
+                </div>
+
+                <div class="title">
+                    {{#if user}}
+                    <i class="dropdown icon"></i>
+                    Greeted languages ({{user.languages.length}})
+                    {{/if}}
+                </div>
+                <div class="content">
+                    <div class="mylist"  align="left">
+                        {{#each user.languages}}
+                            <div>
+                                <i class="{{this.flag}} flag"></i>
+                                <a href="#" class="list-group-item">{{this.type}} ({{this.counter}})</a>
+                            </div>
+                            {{else}}
+                                <div class="well">
+                                    <p class="text-danger">Sorry, no languages have been seleted. </p>
+                                </div>
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -65,5 +110,6 @@
             var regex = /^[a-zA-Z]+$/;
             (regex.test(this.value) !== true) ? this.value = this.value.replace(/[^a-zA-Z]+/, '') : this.value
         });
+        $('.ui.accordion').accordion();
     </script>
 </body>

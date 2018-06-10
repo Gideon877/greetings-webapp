@@ -7,7 +7,38 @@ module.exports = [
 		languageCount: '',
 		firstGreeted: 'Eers begroet',
 		lastGreeted: 'Laaste begroet',
+		'flag': 'za'
 	}, 
+	{
+		language: 'Albanian',
+		greetMessage: 'Përshëndetje, ',
+		greetedMessage: 'Mirëse u ktheve.',
+		greetCounter: '',
+		languageCount: '',
+		firstGreeted: 'Së pari u përshëndetën',
+		lastGreeted: 'E fundit përshëndeti',
+		'flag': 'al'
+	}, 
+	{
+		language: 'Arabic',
+		greetMessage: 'Marhabaan (مرحبا), ',
+		greetedMessage: 'Marhabaan bieawdatik (مرحبا بعودتك).',
+		greetCounter: '',
+		languageCount: '',
+		firstGreeted: 'Së pari u përshëndetën',
+		lastGreeted: 'E fundit përshëndeti',
+		'flag': 'sa'
+	}, 
+	{
+		language: 'Chinese (Simplified)',
+		greetMessage: 'Nǐ hǎo (你好), ',
+		greetedMessage: 'Huānyíng huílái (欢迎回来).',
+		greetCounter: '',
+		languageCount: '',
+		firstGreeted: '',
+		lastGreeted: '',
+		'flag': 'cn'
+	},
 	{
 		language: 'English',
 		greetMessage: 'Hello, ',
@@ -16,6 +47,7 @@ module.exports = [
 		languageCount: '',
 		firstGreeted: 'First greeted on',
 		lastGreeted: 'Last greeted on',
+		'flag': 'za'
 	},
 	{
 		language: 'French',
@@ -25,7 +57,18 @@ module.exports = [
 		languageCount: '',
 		firstGreeted: '',
 		lastGreeted: '',
-	}, 
+		'flag': 'fr'
+	},
+	{
+		language: 'German',
+		greetMessage: 'Hallo, ',
+		greetedMessage: 'Willkommen zurück.',
+		greetCounter: '',
+		languageCount: '',
+		firstGreeted: '',
+		lastGreeted: '',
+		'flag': 'de'
+	},  
 	{
 		language: 'IsiXhosa',
 		greetMessage: 'Molo, ',
@@ -34,15 +77,17 @@ module.exports = [
 		languageCount: '',
 		firstGreeted: '',
 		lastGreeted: '',
+		'flag': 'za'
 	},
 	{
-		language: 'isiNdebele',
+		language: 'IsiNdebele',
 		greetMessage: 'Lotjhani, ',
 		greetedMessage: '',
 		greetCounter: '',
 		languageCount: '',
 		firstGreeted: '',
 		lastGreeted: '',
+		'flag': 'za'
 	},
 	{
 		language: 'IsiZulu',
@@ -52,6 +97,37 @@ module.exports = [
 		languageCount: '',
 		firstGreeted: '',
 		lastGreeted: '',
+		'flag': 'za'
+	},
+	{
+		language: 'Italian',
+		greetMessage: 'Ciao, ',
+		greetedMessage: 'Ben tornato.',
+		greetCounter: '',
+		languageCount: '',
+		firstGreeted: '',
+		lastGreeted: '',
+		'flag': 'it'
+	},
+	{
+		language: 'Japanese',
+		greetMessage: 'Kon\'nichiwa (こんにちは), ',
+		greetedMessage: 'Okaerinasai (お帰りなさい).',
+		greetCounter: '',
+		languageCount: '',
+		firstGreeted: '',
+		lastGreeted: '',
+		'flag': 'jp'
+	},
+	{
+		language: 'Latin',
+		greetMessage: 'Salve, ',
+		greetedMessage: 'Receperint retro.',
+		greetCounter: '',
+		languageCount: '',
+		firstGreeted: '',
+		lastGreeted: '',
+		'flag': 'it'
 	},
 	{
 		language: 'Northern Sotho',
@@ -61,6 +137,17 @@ module.exports = [
 		languageCount: '',
 		firstGreeted: '',
 		lastGreeted: '',
+		'flag': 'za'
+	},
+	{
+		language: 'Portuguese',
+		greetMessage: 'Olá, ',
+		greetedMessage: 'Bem vindo de volta.',
+		greetCounter: '',
+		languageCount: '',
+		firstGreeted: '',
+		lastGreeted: '',
+		'flag': 'pt'
 	},
 	{
 		language: 'Setswana',
@@ -70,6 +157,17 @@ module.exports = [
 		languageCount: '',
 		firstGreeted: '',
 		lastGreeted: '',
+		'flag': 'za'
+	},
+	{
+		language: 'Shona',
+		greetMessage: 'Mhoro, ',
+		greetedMessage: '',
+		greetCounter: '',
+		languageCount: '',
+		firstGreeted: '',
+		lastGreeted: '',
+		'flag': 'zw'
 	},
 	{
 		language: 'Siswati (Swati)',
@@ -79,6 +177,7 @@ module.exports = [
 		languageCount: '',
 		firstGreeted: '',
 		lastGreeted: '',
+		'flag': 'za'
 	},
 	{
 		language: 'Southern Sotho',
@@ -88,6 +187,7 @@ module.exports = [
 		languageCount: '',
 		firstGreeted: '',
 		lastGreeted: '',
+		'flag': 'za'
 	},
 	{
 		language: 'Spanish',
@@ -97,6 +197,7 @@ module.exports = [
 		languageCount: '',
 		firstGreeted: '',
 		lastGreeted: '',
+		'flag': 'es'
 	}, 
 	{
 		language: 'Tshivenḓa (Venda)',
@@ -106,6 +207,7 @@ module.exports = [
 		languageCount: '',
 		firstGreeted: '',
 		lastGreeted: '',
+		'flag': 'za'
 	},
 	{
 		language: 'Xitsonga (Tsonga)',
@@ -115,6 +217,7 @@ module.exports = [
 		languageCount: '',
 		firstGreeted: '',
 		lastGreeted: '',
+		'flag': 'za'
 	},
 ];
 
