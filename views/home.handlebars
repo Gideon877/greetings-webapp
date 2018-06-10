@@ -20,6 +20,12 @@
                     {{/if}}
                 </div>
             </h2>
+            {{!-- <div class="content" align="right">
+                <button class="ui basic button">
+                    <i class="icon user"></i>
+                    <a href="/login">Admin</a>
+                </button>
+            </div> --}}
             </div>
 
             <form action="/" method="POST">
@@ -83,7 +89,7 @@
                 <div class="title">
                     {{#if user}}
                     <i class="dropdown icon"></i>
-                    Greeted languages ({{user.languages.length}})
+                    {{user.name}}'s greeted languages ({{user.languages.length}})
                     {{/if}}
                 </div>
                 <div class="content">

@@ -41,10 +41,13 @@ app.use(flash()); // set up http session
 
 app.get('/', readRoute.getHomeScreen);
 app.get('/details/:id', readRoute.getUser);
-// app.get('/greeted', nameRoutes.greeted);
+app.get('/login', (req, res, done) => {
+    res.render('login');
+});
 // app.get('/clear', nameRoutes.clearHistory);
 
 app.post('/', createRoute.greetSomeone);
+app.post('/login', readRoute.getAdminPage);
 // app.post('/clear', nameRoutes.clearHistory);
 
 

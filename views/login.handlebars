@@ -1,0 +1,40 @@
+<title>Sign In</title>
+</head>
+<body>
+    <div class="ui middle aligned center aligned container">
+        <hr>
+        <div class="ui piled segment">
+            <div class="ui message">
+            <h2 class="ui header">
+                <i class="handshake outline icon"></i>
+                <div class="content">
+                    Greetings Web App
+                    {{#if messages.error}}
+                        <div class="sub red header">{{messages.error}}</div>
+                    {{/if}}
+                </div>
+            </h2>
+            </div>
+        </div>
+        <h4 align="center" class="ui teal header">Welcome Back Admin</h4>
+
+        <form class="ui large form" method="POST">
+            <div class="ui piled segment">
+                <div class="required field">
+                    <div class="ui large left icon input">
+                        <i class="user icon"></i>
+                        <input type="text" name="username" placeholder="Username" value="gideon877" required>
+                    </div>
+                </div>
+
+                <div class="required field">
+                    <div class="ui large left icon input">
+                        <i class="lock icon"></i>
+                        <input type="password" name="password" placeholder="Password" value="1234">
+                    </div>
+                </div>
+                <button class="ui large primary basic button" type="submit">Login</button>
+            </div>
+        </form>
+    </div>
+</body>

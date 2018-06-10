@@ -26,8 +26,22 @@ module.exports = function(models) {
          })
     }
 
+    const getAdminPage = (req, res, done) => {
+        const { username, password } = req.body;
+        mongoDB.findOne({ username }, (err, user) => {
+            if (err) {
+                req.flash('error', 'Invalid user Id provided.')
+                res.render('details');
+            }
+            console.log(user);
+            
+            res.render('admin', {user});
+         })
+    }
+
     return {
         getHomeScreen,
-        getUser
+        getUser,
+        getAdminPage
     }
 }
