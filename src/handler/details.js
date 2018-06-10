@@ -16,7 +16,6 @@ module.exports = function(models) {
          })
         res.render('details');
     }
-
     return {
         getUser
     }

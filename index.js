@@ -37,17 +37,17 @@ app.use(bodyParser.json());
 app.use(session({ secret: 'keyboard cat', resave: true, saveUninitialized: true, cookie: { maxAge: 60000 * 30}}));
 app.use(flash()); // set up http session
 
-
-
 app.get('/', readRoute.getHomeScreen);
+app.post('/', createRoute.greetSomeone);
+
 app.get('/details/:id', readRoute.getUser);
+
 app.get('/login', (req, res, done) => {
     res.render('login');
 });
-// app.get('/clear', nameRoutes.clearHistory);
-
-app.post('/', createRoute.greetSomeone);
 app.post('/login', readRoute.getAdminPage);
+
+// app.get('/clear', nameRoutes.clearHistory);
 // app.post('/clear', nameRoutes.clearHistory);
 
 
