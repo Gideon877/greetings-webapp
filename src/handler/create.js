@@ -75,7 +75,7 @@ module.exports = function(models) {
             flag = flagArr[0].flag;
         
         if (getLanguageIndex >= 0) {
-            mongoDB.update({ name, 'languages.type': language }, { $inc: {'languages.$.counter': 1} }, { $set: {'languages.$.last': moment().format('MMMM Do YYYY, h:mm:ss a')}},
+            mongoDB.update({ name, 'languages.type': language }, { $inc: {'languages.$.counter': 1}, $set: {'languages.$.last': moment().format('MMMM Do YYYY, h:mm:ss a')}  },
                 function(err){
                     if (err) return done(err)
             })
