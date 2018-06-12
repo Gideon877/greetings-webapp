@@ -18,22 +18,23 @@
         </div>
         <h4 align="center" class="ui teal header">Welcome Back Admin</h4>
 
-        <form class="ui large form" method="POST">
+        <form class="ui large form" action="/admin" method="POST">
             <div class="ui piled segment">
                 <div class="required field">
                     <div class="ui large left icon input">
                         <i class="user icon"></i>
-                        <input type="text" name="username" placeholder="Username" value="gideon877" required>
+                        <input type="text" name="username" placeholder="Username" value="admin" required>
                     </div>
                 </div>
 
                 <div class="required field">
                     <div class="ui large left icon input">
                         <i class="lock icon"></i>
-                        <input type="password" name="password" placeholder="Password" value="1234">
+                        <input type="password" name="password" placeholder="Password" value="********">
                     </div>
                 </div>
-                <button class="ui large primary basic button" type="submit">Login</button>
+                <a href="/" class="ui large primary blue button" type="cancel">Login</a> {{!-- change type to submit, ui large primary basic button, tag to button --}}
+                <a href="/" class="ui large red button" type="cancel">Cancel</a>
             </div>
         </form>
     </div>

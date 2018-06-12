@@ -45,9 +45,22 @@ app.get('/details/:id', readRoute.getUser);
 app.get('/login', (req, res, done) => {
     res.render('login');
 });
-app.post('/login', readRoute.getAdminPage);
 
-// app.get('/clear', nameRoutes.clearHistory);
+app.get('/admin', function(req, res, done){
+    res.render('admin')
+});
+app.post('/admin', readRoute.getAdminPage);
+
+
+app.get('/logout', (req, res, done) => {
+    res.redirect('/');
+});
+
+app.get('/settings', (req, res, done) => {
+    res.render('settings');
+});
+
+// app.get('/clear', deleteRoute.clearHistory);
 // app.post('/clear', nameRoutes.clearHistory);
 
 

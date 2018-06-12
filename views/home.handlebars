@@ -11,23 +11,31 @@
         <hr>
         <div class="ui piled segment">
             <div class="ui message">
+                
             <h2 class="ui header">
                 <i class="handshake outline icon"></i>
                 <div class="content">
-                    Greetings Web App
-                    {{#if messages.error}}
-                        <div class="sub red header">{{messages.error}}</div>
-                    {{/if}}
+                    <b>Greetings Web App</b>
                 </div>
             </h2>
-            {{!-- <div class="content" align="right">
-                <button class="ui basic button">
-                    <i class="icon user"></i>
-                    <a href="/login">Admin</a>
-                </button>
-            </div> --}}
             </div>
-
+            <div class="ui container">
+                <div class="ui icon menu" id="you can remove, compact, labeled">
+                    <div class="item">
+                        <a href="/"><i class="home icon"></i>Home</a>
+                    </div>
+                    <div class="item">
+                        <a href="#"><i class="users icon"></i>About</a>
+                    </div>
+                    {{!-- <div class="item">
+                        <a href="#"><i class="language icon"></i>Languages</a>
+                    </div> --}}
+                    <div class="right item">
+                        <a href="/login"><i class="cogs icon"></i>Admin</a>
+                    </div>
+                </div>
+            </div>
+            <hr>
             <form action="/" method="POST">
                 <div class="required field">
                     <div class="ui large left icon input">
@@ -96,8 +104,7 @@
                     <div class="mylist"  align="left">
                         {{#each user.languages}}
                             <div>
-                                <i class="{{this.flag}} flag"></i>
-                                <a href="#" class="list-group-item">{{this.type}}</a>
+                                <p><i class="{{this.flag}} flag"></i><b>{{this.type}}</b></p>
                             </div>
                             {{else}}
                                 <div class="well">
