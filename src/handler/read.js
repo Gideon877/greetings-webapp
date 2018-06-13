@@ -3,14 +3,11 @@ const moment = require('moment');
 const languages = require('../lib/translation');
 
 module.exports = function(models) {
-
     const mongoDB = models.Name;
     
     const getHomeScreen = (req, res, done) => {
         mongoDB.find({}, (err, users) => {
             if (err) return done(err);
-            req.flash('default', 'Your greeting message will be displayed here.');
-            req.flash('error', 'Please enter your name below.');
             res.render('home', {languages, counter: users.length, namesGreeted: users });
         })
     }
@@ -39,9 +36,21 @@ module.exports = function(models) {
          })
     }
 
+    const getNames = (req, res, done) => {
+        mongoDB.find({}, (err, users) => {
+            if (err) {
+                req.flash('error', 'Invalid user Id provided.')
+                res.render('names');
+            }            
+            res.render('names', { users});
+        })
+
+    }
+
     return {
         getHomeScreen,
         getUser,
-        getAdminPage
+        getAdminPage,
+        getNames
     }
 }

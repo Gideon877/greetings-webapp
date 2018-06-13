@@ -1,6 +1,7 @@
 const assert = require('assert');
 const Models = require('../src/schema/models');
-
+const _ = require('lodash');
+const moment = require('moment');
 describe('modules should be able to', function() {
 
     var models = Models('mongodb://localhost/greet-tests');
@@ -12,7 +13,20 @@ describe('modules should be able to', function() {
             }
             models.Name.create({
                 name : "Viwe",
-                greetCounter : 1
+                greetCounter : 1,
+                timestamp: {
+                    firstGreeted: moment().format('MMMM Do YYYY, h:mm:ss a'),
+                    lastGreeted: moment().format('MMMM Do YYYY, h:mm:ss a')
+                },
+                languages: [
+                    {
+                        counter: 1,
+                        first: moment().format('MMMM Do YYYY, h:mm:ss a'),
+                        last: moment().format('MMMM Do YYYY, h:mm:ss a'),
+                        type: 'Afrikaans',
+                        flag: 'za'
+                    }
+                ]
             }, function(err){
                 done(err);
             });
@@ -22,13 +36,27 @@ describe('modules should be able to', function() {
     it('store Names to MongoDB', function(done) {
         var nameData = {
             name: 'Thabang',
-            greetCounter : 2
+            greetCounter : 2,
+            timestamp: {
+                firstGreeted: moment().format('MMMM Do YYYY, h:mm:ss a'),
+                lastGreeted: moment().format('MMMM Do YYYY, h:mm:ss a')
+            },
+            languages: [
+                {
+                    counter: 1,
+                    first: moment().format('MMMM Do YYYY, h:mm:ss a'),
+                    last: moment().format('MMMM Do YYYY, h:mm:ss a'),
+                    type: 'Zulu',
+                    flag: 'za'
+                }
+            ]
         };
         models.Name
             .create(nameData, function(err) {
                 models.Name.findOne({
                     name: 'Thabang',
                 }, function(err, person) {
+                    // console.log(person);
                     assert.equal("Thabang", person.name)
                     assert.equal(2, person.greetCounter)
                     done(err);

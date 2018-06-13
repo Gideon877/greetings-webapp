@@ -8,6 +8,7 @@ module.exports = function(mongoUrl){
         greetCounter : Number,
         languages: Array,
         timestamp: {
+            currentLanguage: String,
             firstGreeted: String,
             lastGreeted: String
         }

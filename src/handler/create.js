@@ -6,7 +6,6 @@ const _ = require('lodash');
 
 module.exports = function(models) {
     const mongoDB = models.Name;
-    
     const greetSomeone = (req, res, done) => {
         let { name, language } = req.body;
         if (!name) {
@@ -37,13 +36,15 @@ module.exports = function(models) {
             greetCounter: 1,
             timestamp: {
                 firstGreeted: moment().format('MMMM Do YYYY, h:mm:ss a'),
-                lastGreeted: moment().format('MMMM Do YYYY, h:mm:ss a')
+                lastGreeted: moment().format('MMMM Do YYYY, h:mm:ss a'),
+                currentLanguage: language
             },
             languages: [
                 {
-                    type: language,
                     counter: 1,
+                    first: moment().format('MMMM Do YYYY, h:mm:ss a'),
                     last: moment().format('MMMM Do YYYY, h:mm:ss a'),
+                    type: language,
                     flag
                 }
             ]
@@ -55,7 +56,8 @@ module.exports = function(models) {
             let obj = _.find(languages, function(x) {
                 return x.language == language
             });
-
+            console.log('user', user);
+            
             mongoDB.find({}, (err, users) => {
                 if (err) return done(err);
                 let namesGreeted = _.sortBy(users, [function(index) { return index.name; }]);
@@ -89,6 +91,9 @@ module.exports = function(models) {
         };
         user.greetCounter = user.greetCounter + 1;
         user.timestamp.lastGreeted = moment().format('MMMM Do YYYY, h:mm:ss a');
+        user.timestamp.currentLanguage = language;
+        console.log('--------------------------------', user);
+        
 
         user.save(function(err, result) {
             if (err) return done(err);
