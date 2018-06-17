@@ -51,8 +51,24 @@ body {
   /* font-family: 'Lora', serif; */
 }
 
+.ui.table thead th {
+  background: #01d9f5e8;
+}
+
+.ui.unstackable.table {
+  background: #01f5ccd2;
+  background: linear-gradient(
+    to bottom right,
+    #01f5ccd2,
+    #01f5cc9f
+  );
+} 
 #madume {
   font-size: 1.2em;
+}
+
+a {
+  color: black
 }
 
 .ui.icon.menu {
@@ -62,6 +78,10 @@ body {
     #f7f7f7,
     #dad3f3
   ); /* Standard syntax (must be last) */
+}
+
+.ui.tall.stacked.segment {
+  background: #6ee7e7;
 }
 
 /* FONTS AVAILABLE
