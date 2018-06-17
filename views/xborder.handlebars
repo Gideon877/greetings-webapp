@@ -1,4 +1,4 @@
-<title>Home | Mbuliso</title>
+<title>Other | Mbuliso</title>
 </head>
 <style>
     #mylist {
@@ -25,7 +25,7 @@
             </div>
             <div class="ui container">
                 <div class="ui icon menu" id="you can remove, compact, labeled">
-                    <div class="item active">
+                    <div class="item">
                         <a href="/">
                             <i class="home icon"></i>Home</a>
                     </div>
@@ -37,21 +37,21 @@
                         <a href="/admin">
                             <i class="cogs icon"></i>Admin</a>
                     </div>
-                     <div class="item">
+                       <div class="item active">
                         <a href="/other">
                             <i class="language icon"></i>More Languages</a>
                     </div>
                 </div>
             </div>
             <hr>
-            <form action="/" method="POST">
+            <form action="/other" method="POST">
                 <div class="required field">
                     <div class="ui medium left icon input">
                         <i class="user icon"></i>
                         <input type="text" name="name" placeholder="Name" id="user_input" value="{{user.name}}" required style="background-color:#b2e5f7">
                     </div>
                     <select class="ui dropdown" id="dropdown" name="language" style="background-color: #b2e5f7">
-                        {{#each saLang}}
+                        {{#each intLang}}
                         <option value="{{language}}" name="language" style="font-size: inherit">{{language}}</option>
                         {{/each}}
                     </select>

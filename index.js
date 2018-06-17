@@ -12,12 +12,14 @@ const languages = require('./src/lib/translation');
 const Erase = require('./src/handler/delete');
 const Create = require('./src/handler/create');
 const Read = require('./src/handler/read');
+const XBorder = require('./src/handler/xborder');
 // const Details = require('./src/handler/details');
 // const Update = require('./src/handler/update');
 
 const deleteRoute = Erase(models);
 const createRoute = Create(models);
 const readRoute = Read(models);
+const crossBorder = XBorder(models);
 // const detailsRoutes = Details(models);
 // const updateRoute = Update(models);
 
@@ -41,6 +43,9 @@ app.use(flash()); // set up http session
 
 app.get('/', readRoute.getHomeScreen);
 app.post('/', createRoute.greetSomeone);
+
+app.get('/other', readRoute.getOtherScreen);
+app.post('/other', crossBorder.greetSomeone);
 
 app.get('/details/:id', readRoute.getUser);
 
