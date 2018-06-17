@@ -1,5 +1,5 @@
 {
-  "name": "greetings-webapp",
+  "name": "mbuliso-webapp",
   "version": "1.2.0",
   "description": "Allows a user to greet different people using a HTTP GET route.",
   "main": "index.js",

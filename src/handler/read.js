@@ -1,6 +1,7 @@
 'use strict';
 const moment = require('moment');
 const languages = require('../lib/translation');
+const _ = require('lodash');
 
 module.exports = function(models) {
     const mongoDB = models.Name;
@@ -8,7 +9,9 @@ module.exports = function(models) {
     const getHomeScreen = (req, res, done) => {
         mongoDB.find({}, (err, users) => {
             if (err) return done(err);
-            res.render('home', {languages, counter: users.length, namesGreeted: users });
+            let saLang = _.filter(languages, function(index) { return !index.crossborder; });
+            let intLang = _.filter(languages, function(index) { return index.crossborder; });
+            res.render('home', { saLang, intLang , counter: users.length, namesGreeted: users });
         })
     }
     
@@ -30,8 +33,6 @@ module.exports = function(models) {
                 req.flash('error', 'Invalid user Id provided.')
                 res.render('details');
             }
-            console.log(user);
-            
             res.render('admin', {user});
          })
     }
@@ -39,10 +40,11 @@ module.exports = function(models) {
     const getNames = (req, res, done) => {
         mongoDB.find({}, (err, users) => {
             if (err) {
-                req.flash('error', 'Invalid user Id provided.')
+                req.flash('error', err)
                 res.render('names');
-            }            
-            res.render('names', { users});
+            }       
+            let ascOrder = _.sortBy(users, ['name']);     
+            res.render('names', { users: ascOrder});
         })
 
     }

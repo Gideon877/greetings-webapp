@@ -1,30 +1,68 @@
 hr {
-    clear: both;
-    visibility: hidden;
-  }
-  
-  #display {
-    text-transform: capitalize
-  }
+  clear: both;
+  visibility: hidden;
+}
 
-  p {
-    color: black;
-    font-family: 'Nanum Gothic', sans-serif;
-  }
+#display {
+  text-transform: capitalize;
+}
 
-  #dropdown {
-    color:rgb(44, 154, 182);
-    font-family: 'Playfair Display', serif;
-  } 
-  
-  b {
-    color:rgb(21, 67, 128);
-    font-family: 'Playfair Display', serif;
-  }
+p {
+  color: black;
+  /* font-family: 'Nanum Gothic', sans-serif; */
+}
 
-div {
-    font-family: 'Lora', serif;
-  }
+#dropdown {
+  color: rgb(44, 154, 182);
+  /* font-family: 'Playfair Display', serif; */
+}
+
+b {
+  color: rgb(21, 67, 128);
+  color: rgb(39, 26, 39);
+  /* font-family: 'Playfair Display', serif; */
+}
+
+.ui.piled.segment {
+  background: #00ffff;
+  background: linear-gradient(
+    to bottom right,
+    #00ffff,
+    gold
+  ); /* Standard syntax (must be last) */
+}
+
+.ui.message {
+  background: #01f5ccd2;
+  background: linear-gradient(
+    to bottom right,
+    #01f5ccd2,
+    #01f5cc9f
+  ); /* Standard syntax (must be last) */
+}
+body {
+  background: red; /* For browsers that do not support gradients */
+  background: linear-gradient(
+    to bottom right,
+    #239bca,
+    yellow
+  ); /* Standard syntax (must be last) */
+
+  /* font-family: 'Lora', serif; */
+}
+
+#madume {
+  font-size: 1.2em;
+}
+
+.ui.icon.menu {
+  background: #00ffff;
+  background: linear-gradient(
+    to bottom right,
+    #f7f7f7,
+    #dad3f3
+  ); /* Standard syntax (must be last) */
+}
 
 /* FONTS AVAILABLE
 font-family: 'Open Sans Condensed', sans-serif;

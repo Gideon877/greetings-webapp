@@ -7,7 +7,8 @@ module.exports = [
 		languageCount: '',
 		firstGreeted: 'Eers begroet',
 		lastGreeted: 'Laaste begroet',
-		'flag': 'za'
+		'flag': 'za',
+		crossborder: false
 	}, 
 	{
 		language: 'Albanian',
@@ -17,7 +18,8 @@ module.exports = [
 		languageCount: '',
 		firstGreeted: 'Së pari u përshëndetën',
 		lastGreeted: 'E fundit përshëndeti',
-		'flag': 'al'
+		'flag': 'al',
+		crossborder: true
 	}, 
 	{
 		language: 'Arabic',
@@ -27,7 +29,8 @@ module.exports = [
 		languageCount: '',
 		firstGreeted: 'Së pari u përshëndetën',
 		lastGreeted: 'E fundit përshëndeti',
-		'flag': 'sa'
+		'flag': 'sa',
+		crossborder: true
 	}, 
 	{
 		language: 'Chinese (Simplified)',
@@ -37,7 +40,8 @@ module.exports = [
 		languageCount: '',
 		firstGreeted: '',
 		lastGreeted: '',
-		'flag': 'cn'
+		'flag': 'cn',
+		crossborder: true
 	},
 	{
 		language: 'English',
@@ -47,7 +51,8 @@ module.exports = [
 		languageCount: '',
 		firstGreeted: 'First greeted on',
 		lastGreeted: 'Last greeted on',
-		'flag': 'za'
+		'flag': 'za',
+		crossborder: false
 	},
 	{
 		language: 'French',
@@ -57,7 +62,8 @@ module.exports = [
 		languageCount: '',
 		firstGreeted: '',
 		lastGreeted: '',
-		'flag': 'fr'
+		'flag': 'fr',
+		crossborder: true
 	},
 	{
 		language: 'German',
@@ -67,7 +73,8 @@ module.exports = [
 		languageCount: '',
 		firstGreeted: '',
 		lastGreeted: '',
-		'flag': 'de'
+		'flag': 'de',
+		crossborder: true
 	},  
 	{
 		language: 'IsiXhosa',
@@ -77,7 +84,8 @@ module.exports = [
 		languageCount: '',
 		firstGreeted: '',
 		lastGreeted: '',
-		'flag': 'za'
+		'flag': 'za',
+		crossborder: false
 	},
 	{
 		language: 'IsiNdebele',
@@ -87,7 +95,8 @@ module.exports = [
 		languageCount: '',
 		firstGreeted: '',
 		lastGreeted: '',
-		'flag': 'za'
+		'flag': 'za',
+		crossborder: false
 	},
 	{
 		language: 'IsiZulu',
@@ -97,7 +106,8 @@ module.exports = [
 		languageCount: '',
 		firstGreeted: '',
 		lastGreeted: '',
-		'flag': 'za'
+		'flag': 'za',
+		crossborder: false
 	},
 	{
 		language: 'Italian',
@@ -107,7 +117,8 @@ module.exports = [
 		languageCount: '',
 		firstGreeted: '',
 		lastGreeted: '',
-		'flag': 'it'
+		'flag': 'it',
+		crossborder: true
 	},
 	{
 		language: 'Japanese',
@@ -117,7 +128,8 @@ module.exports = [
 		languageCount: '',
 		firstGreeted: '',
 		lastGreeted: '',
-		'flag': 'jp'
+		'flag': 'jp',
+		crossborder: true
 	},
 	{
 		language: 'Latin',
@@ -127,7 +139,8 @@ module.exports = [
 		languageCount: '',
 		firstGreeted: '',
 		lastGreeted: '',
-		'flag': 'it'
+		'flag': 'it',
+		crossborder: true
 	},
 	{
 		language: 'Northern Sotho',
@@ -137,7 +150,8 @@ module.exports = [
 		languageCount: '',
 		firstGreeted: '',
 		lastGreeted: '',
-		'flag': 'za'
+		'flag': 'za',
+		crossborder: false
 	},
 	{
 		language: 'Portuguese',
@@ -147,7 +161,8 @@ module.exports = [
 		languageCount: '',
 		firstGreeted: '',
 		lastGreeted: '',
-		'flag': 'pt'
+		'flag': 'pt',
+		crossborder: true
 	},
 	{
 		language: 'Setswana',
@@ -157,7 +172,8 @@ module.exports = [
 		languageCount: '',
 		firstGreeted: '',
 		lastGreeted: '',
-		'flag': 'za'
+		'flag': 'za',
+		crossborder: false
 	},
 	{
 		language: 'Shona',
@@ -167,7 +183,8 @@ module.exports = [
 		languageCount: '',
 		firstGreeted: '',
 		lastGreeted: '',
-		'flag': 'zw'
+		'flag': 'zw',
+		crossborder: true
 	},
 	{
 		language: 'Siswati (Swati)',
@@ -177,7 +194,8 @@ module.exports = [
 		languageCount: '',
 		firstGreeted: '',
 		lastGreeted: '',
-		'flag': 'za'
+		'flag': 'za',
+		crossborder: false
 	},
 	{
 		language: 'Southern Sotho',
@@ -187,7 +205,8 @@ module.exports = [
 		languageCount: '',
 		firstGreeted: '',
 		lastGreeted: '',
-		'flag': 'za'
+		'flag': 'za',
+		crossborder: false
 	},
 	{
 		language: 'Spanish',
@@ -197,7 +216,8 @@ module.exports = [
 		languageCount: '',
 		firstGreeted: '',
 		lastGreeted: '',
-		'flag': 'es'
+		'flag': 'es',
+		crossborder: true
 	}, 
 	{
 		language: 'Tshivenḓa (Venda)',
@@ -207,7 +227,8 @@ module.exports = [
 		languageCount: '',
 		firstGreeted: '',
 		lastGreeted: '',
-		'flag': 'za'
+		'flag': 'za',
+		crossborder: false
 	},
 	{
 		language: 'Xitsonga (Tsonga)',
@@ -217,7 +238,8 @@ module.exports = [
 		languageCount: '',
 		firstGreeted: '',
 		lastGreeted: '',
-		'flag': 'za'
+		'flag': 'za',
+		crossborder: false
 	},
 ];
 

@@ -61,7 +61,9 @@ module.exports = function(models) {
             mongoDB.find({}, (err, users) => {
                 if (err) return done(err);
                 let namesGreeted = _.sortBy(users, [function(index) { return index.name; }]);
-                res.render('home', { languages, obj, user, counter: users.length, namesGreeted });     
+                let saLang = _.filter(languages, function(index) { return !index.crossborder; });
+                let intLang = _.filter(languages, function(index) { return index.crossborder; });
+                res.render('home', { saLang, intLang, obj, user, counter: users.length, namesGreeted });     
             });
         });       
     };
@@ -92,8 +94,6 @@ module.exports = function(models) {
         user.greetCounter = user.greetCounter + 1;
         user.timestamp.lastGreeted = moment().format('MMMM Do YYYY, h:mm:ss a');
         user.timestamp.currentLanguage = language;
-        console.log('--------------------------------', user);
-        
 
         user.save(function(err, result) {
             if (err) return done(err);
@@ -106,7 +106,9 @@ module.exports = function(models) {
         mongoDB.find({}, (err, users) => {
             if (err) return done(err);
             let namesGreeted = _.sortBy(users, [function(index) { return index.name; }]);
-            res.render('home', { languages, obj, user, counter: users.length, namesGreeted });     
+            let saLang = _.filter(languages, function(index) { return !index.crossborder; });
+            let intLang = _.filter(languages, function(index) { return index.crossborder; });
+            res.render('home', { saLang, intLang , obj, user, counter: users.length, namesGreeted });     
         });
     };
 

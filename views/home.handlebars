@@ -1,95 +1,95 @@
-    <title>Home | Greetings</title>
+<title>Home | Mbuliso</title>
 </head>
 <style>
-    .mylist {
+    #mylist {
         vertical-align: middle;
         display: inline-block;
     }
 </style>
-<body>
+
+<body onload="getLocation()">
     <div class="ui middle aligned center aligned container">
         <hr>
         <div class="ui piled segment">
             <div class="ui message">
-                
-            <h2 class="ui header">
-                <i class="handshake outline icon"></i>
-                <div class="content">
-                    <b>Greetings Web App</b>
-                </div>
-            </h2>
+                <h2 class="ui header">
+                    <i class="handshake outline icon"></i>
+                    <div class="content">
+                        <b>Mbuliso Web App</b>
+                    </div>
+                </h2>
             </div>
             <div class="ui container">
                 <div class="ui icon menu" id="you can remove, compact, labeled">
-                    <div class="item">
-                        <a href="/"><i class="home icon"></i>Home</a>
+                    <div class="item active">
+                        <a href="/">
+                            <i class="home icon"></i>Home</a>
                     </div>
                     <div class="item">
-                        <a href="/about"><i class="users icon"></i>About</a>
+                        <a href="/about">
+                            <i class="users icon"></i>About</a>
                     </div>
-                    {{!-- <div class="item">
-                        <a href="#"><i class="language icon"></i>Languages</a>
-                    </div> --}}
                     <div class="right item">
-                        <a href="/admin"><i class="cogs icon"></i>Admin</a>
+                        <a href="/admin">
+                            <i class="cogs icon"></i>Admin</a>
                     </div>
                 </div>
             </div>
             <hr>
             <form action="/" method="POST">
                 <div class="required field">
-                    <div class="ui large left icon input">
+                    <div class="ui medium left icon input">
                         <i class="user icon"></i>
-                        <input type="text" name="name" placeholder="Name" id="user_input" value="" required>
+                        <input type="text" name="name" placeholder="Name" id="user_input" value="{{user.name}}" required style="background-color:#b2e5f7">
                     </div>
-                </div>
-                <hr>
-                <hr>
-                <hr>
-                    <select class="ui dropdown" id="dropdown"name="language">
-                        {{#each languages}}
-                        <option value="{{language}}" name="language">{{language}}</option>
+                    <select class="ui dropdown" id="dropdown" name="language" style="background-color: #b2e5f7">
+                        {{#each saLang}}
+                        <option value="{{language}}" name="language" style="font-size: inherit">{{language}}</option>
                         {{/each}}
                     </select>
-                <hr>
-                <button class="primary ui large button" type="submit">Greet</button>
+                <button class="primary ui medium button" type="submit">Greet</button>
+                </div> 
             </form>
-            
-            <br>
-            <hr>
 
             <div class="ui message">
                 <div class="header">
-                {{#if messages.default}}
-                        <div class="sub teal header">{{messages.default}}</div>
-                {{/if}}
-
-                {{#if user}}
-                <p>{{obj.greetMessage}} {{user.name}}.</p>
+                    {{#if messages.default}}
+                    <div class="sub teal header">{{messages.default}}</div>
+                    {{/if}} {{#if user}}
+                    <p style="font-size:2em;">{{obj.greetMessage}} {{user.name}}.</p>
                 </div>
-                <p>You have been greeted: <b>{{user.greetCounter}}</b> time(s), </p>
-                <p>with <b>{{user.languages.length}}</b> different language(s).</p>
-                <hr>
-                <p>First greeted on: <b>{{user.timestamp.firstGreeted}}</b>.</p>
-                <p>Last greeted on: <b>{{user.timestamp.lastGreeted}}</b>.</p>
+                <p id="madume">You have been greeted:
+                    <b>{{user.greetCounter}}</b> time(s),
+                    <br> with
+                    <b>{{user.languages.length}}</b> different language(s).
+                    <br>
+                    <hr> First greeted on:
+                    <b>{{user.timestamp.firstGreeted}}</b>.
+                    <br> Last greeted on:
+                    <b>{{user.timestamp.lastGreeted}}</b>.</p>
                 {{/if}}
             </div>
             <div class="ui accordion">
                 <div class="title">
                     <i class="dropdown icon"></i>
-                    Names greeted so far: <b>{{counter}}</b>
+                    Names greeted so far:
+                    <b>{{counter}}</b>
                 </div>
                 <div class="content">
-                    <div class="mylist" align="left">
+                    <div id="mylist" class="ui relaxed horizontal list" align="left">
                         {{#each namesGreeted}}
-                            <div>
-                                <i class="user icon"></i>
-                                <a href="/details/{{this.id}}" class="list-group-item">{{this.name}}</a>
-                            </div>
-                            {{else}}
-                                <div class="well">
-                                    <p class="text-danger">Sorry, no names have been greeted. </p>
+                        <div class="item">
+                            <div class="content">
+                                <div class="header">
+                                    <i class="user icon"></i>
+                                    <a href="/details/{{this.id}}" class="list-group-item">{{this.name}}</a>
                                 </div>
+                            </div>
+                        </div>
+                        {{else}}
+                        <div class="well">
+                            <p class="text-danger">Sorry, no names have been greeted. </p>
+                        </div>
                         {{/each}}
                     </div>
                 </div>
@@ -97,28 +97,25 @@
                 <div class="title">
                     {{#if user}}
                     <i class="dropdown icon"></i>
-                    {{user.name}}'s greeted languages ({{user.languages.length}})
-                    {{/if}}
+                    {{user.name}}'s greeted languages ({{user.languages.length}}) {{/if}}
                 </div>
                 <div class="content">
-                    <div class="mylist"  align="left">
+                    <div id="mylist" class="ui relaxed horizontal list">
                         {{#each user.languages}}
-                            <div>
-                                <p><i class="{{this.flag}} flag"></i><b>{{this.type}}</b></p>
+                        <div class="item">
+                            <div class="content">
+                                <div class="header">
+                                    <i class="{{this.flag}} flag"></i> {{this.type}}</div>
                             </div>
-                            {{else}}
-                                <div class="well">
-                                    <p class="text-danger">Sorry, no languages have been seleted. </p>
-                                </div>
+                        </div>
                         {{/each}}
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
     <script>
-        $("#user_input").keyup(function(e) {
+        $("#user_input").keyup(function (e) {
             var regex = /^[a-zA-Z]+$/;
             (regex.test(this.value) !== true) ? this.value = this.value.replace(/[^a-zA-Z]+/, '') : this.value
         });
