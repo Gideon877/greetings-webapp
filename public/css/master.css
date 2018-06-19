@@ -24,28 +24,28 @@ b {
 }
 
 .ui.piled.segment {
-  background: #00ffff;
+  background: #00ffff4a;
   background: linear-gradient(
     to bottom right,
-    #00ffff,
-    gold
+    #00ffff94,
+    #ffd700b8
   ); /* Standard syntax (must be last) */
 }
 
 .ui.message {
-  background: #01f5ccd2;
+  background: #01f5cc7a;
   background: linear-gradient(
     to bottom right,
-    #01f5ccd2,
-    #01f5cc9f
+    #01f5cc7a,
+    #01f5cc4f
   ); /* Standard syntax (must be last) */
 }
 body {
   background: red; /* For browsers that do not support gradients */
   background: linear-gradient(
     to bottom right,
-    #239bca,
-    yellow
+    #239bca91,
+    #ffff0069
   ); /* Standard syntax (must be last) */
 
   /* font-family: 'Lora', serif; */
@@ -56,11 +56,11 @@ body {
 }
 
 .ui.unstackable.table {
-  background: #01f5ccd2;
+  background: #01f5cc7a;
   background: linear-gradient(
     to bottom right,
-    #01f5ccd2,
-    #01f5cc9f
+    #01f5cc7a,
+    #01f5cc4f
   );
 } 
 #madume {
@@ -68,7 +68,12 @@ body {
 }
 
 a {
-  color: black
+  color: black;
+  color: darkblue;
+}
+
+a:hover {
+  color: rgba(255, 0, 191, 0.664);
 }
 
 .ui.icon.menu {

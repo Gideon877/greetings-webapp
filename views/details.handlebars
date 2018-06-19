@@ -66,17 +66,19 @@
                             <table class="ui unstackable table">
                                 <thead>
                                     <tr>
+                                        <th>Origin</th>
                                         <th>Languages</th>
-                                        <th>Greet Counter</th>
+                                        <th>Greet Count P/L</th>
                                         <th class="right aligned">Last greeted time</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     {{#each user.languages}}
                                     <tr>
+                                        <td><i class="large {{this.flag}} outline middle aligned flag"></i></td>
                                     <td>
                                         <h4 class="ui image header">
-                                            <i class="large {{this.flag}} outline middle aligned flag"></i>
+                                            {{!-- <i class="large {{this.flag}} outline middle aligned flag"></i> --}}
                                             <div class="content">
                                                     <a href="#" class="list-group-item">{{this.type}}</a>
                                                 {{!-- <div class="sub header">{{this.last}} --}}
